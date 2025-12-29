@@ -1,0 +1,140 @@
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --window-bg: #1a1b26;
+  --window-fg: #c0caf5;
+  --brand: 216 90% 46%;
+  --brand-foreground: #fff;
+}
+
+article figure {
+  margin: 20px 0;
+  text-align: center;
+  img {
+    margin: 0 auto;
+  }
+  figcaption {
+    margin-top: 5px;
+    font-size: 14px;
+    font-style: italic;
+  }
+}
+
+.nextra-filetree {
+  display: flex;
+  justify-content: center;
+}
+
+:is([data-language='vi'] code .line .highlighted) {
+  --tw-shadow-color: transparent;
+  --shiki-token-keyword: white;
+  --shiki-color-text: white;
+  font-weight: bold;
+  background-color: transparent;
+  margin-right: -7px;
+  position: relative;
+  &::before {
+    content: ' ';
+    position: absolute;
+    inset: 0;
+    width: calc(100% - 7px);
+    height: 100%;
+    background-color: hsl(0, 100%, 40%);
+    z-index: -1;
+  }
+}
+
+.DocSearch-Button {
+  background-color: hsla(0, 0%, 0%, 0.05);
+}
+
+.dark {
+  .DocSearch-Button {
+    background-color: hsla(0, 0%, 100%, 0.05);
+    color: hsla(0, 0%, 100%, 0.6);
+    width: 10rem;
+
+    &:hover {
+      background-color: hsla(0, 0%, 100%, 0.1);
+      color: hsla(0, 0%, 100%, 0.8);
+      box-shadow: none;
+    }
+
+    .DocSearch-Search-Icon {
+      color: hsla(0, 0%, 100%, 0.6);
+      width: 1rem;
+    }
+    .DocSearch-Button-Keys {
+      display: none;
+    }
+    .DocSearch-Button-Key {
+      box-shadow: none;
+      background-image: none;
+    }
+    .DocSearch-Button-Key--pressed {
+      transform: translateY(0);
+    }
+    .DocSearch-Button-Placeholder {
+      font-size: 0.875rem;
+    }
+  }
+
+  .DocSearch-Container {
+    background-color: hsla(0, 0%, 0%, 0.9);
+
+    .DocSearch-Modal {
+      background-color: theme(colors.gray.800);
+      box-shadow: none;
+    }
+    .DocSearch-Hit-source,
+    .DocSearch-Form,
+    .DocSearch-Footer {
+      background-color: transparent;
+    }
+    .DocSearch-Footer {
+      box-shadow: none;
+      border-top: 1px solid hsla(0, 0%, 100%, 0.05);
+
+      .DocSearch-Commands {
+        display: none;
+      }
+    }
+    .DocSearch-Form {
+      box-shadow: none;
+      border: 2px solid theme(colors.brand.DEFAULT);
+
+      .DocSearch-MagnifierLabel {
+        color: theme(colors.brand.DEFAULT);
+      }
+      .DocSearch-Input {
+        color: #fff;
+        outline: none;
+        border: none;
+        box-shadow: none;
+      }
+    }
+    .DocSearch-Hit {
+      a {
+        background-color: theme(colors.gray.700 / 90%);
+        box-shadow: none;
+
+        .DocSearch-Hit-title {
+          color: theme(colors.white / 90%);
+        }
+      }
+      &[aria-selected='true'] a {
+        background-color: theme(colors.brand.DEFAULT);
+      }
+    }
+    .DocSearch-Hits mark {
+      color: theme(colors.blue.400);
+    }
+    .DocSearch-Hit-source {
+      color: hsla(0, 0%, 100%, 0.6);
+    }
+    .DocSearch-Screen-Icon svg {
+      margin: 0 auto;
+    }
+  }
+}
